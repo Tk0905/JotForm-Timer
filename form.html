@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JotForm Access Control</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #message {
+            font-size: 20px;
+            color: red;
+        }
+    </style>
+    <script>
+        function checkTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var formContainer = document.getElementById("jotform-container");
+            var messageContainer = document.getElementById("message");
+
+            if (hours >= 8 && hours < 10) {
+                formContainer.style.display = "block"; // Show form
+                messageContainer.style.display = "none"; // Hide message
+            } else {
+                formContainer.style.display = "none"; // Hide form
+                messageContainer.style.display = "block"; // Show message
+                messageContainer.innerHTML = "The form is only accessible between 8 AM and 10 AM.";
+            }
+        }
+
+        setInterval(checkTime, 60000); // Check every minute
+        window.onload = checkTime;
+    </script>
+</head>
+<body>
+
+    <h1>Employee Assessment Form</h1>
+
+    <!-- This is the message that will be shown when the form is closed -->
+    <div id="message"></div>
+
+    <!-- This is where the JotForm will be displayed -->
+    <div id="jotform-container" style="display: none;">
+        <iframe src="https://form.jotform.com/250831349729060" width="100%" height="600px"></iframe>
+    </div>
+
+</body>
+</html>

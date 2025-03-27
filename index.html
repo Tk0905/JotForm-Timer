@@ -21,13 +21,13 @@
             var formContainer = document.getElementById("jotform-container");
             var messageContainer = document.getElementById("message");
 
-            if (hours >= 8 && hours < 17) { // 5 PM is 17 in 24-hour format
+            if (hours >= 8 && hours < 10) { // 10 AM is 10 in 24-hour format
                 formContainer.style.display = "block"; // Show form
                 messageContainer.style.display = "none"; // Hide message
             } else {
                 formContainer.style.display = "none"; // Hide form
                 messageContainer.style.display = "block"; // Show message
-                messageContainer.innerHTML = "The form is only accessible between 8 AM and 5 PM.";
+                messageContainer.innerHTML = "The form is only accessible between 8 AM and 10 AM.";
             }
         }
 
@@ -44,7 +44,7 @@
 
     <!-- This is where the JotForm will be displayed -->
     <div id="jotform-container" style="display: none;">
-        <iframe src="https://form.jotform.com/250852690496467" width="100%" height="600px"></iframe>
+        <iframe src="https://form.jotform.com/250831349729060" width="100%" height="600px"></iframe>
     </div>
 
 </body>

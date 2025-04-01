@@ -21,13 +21,13 @@
             var formContainer = document.getElementById("jotform-container");
             var messageContainer = document.getElementById("message");
 
-            if (hours >= 8 && hours < 10) { // 10 AM is 10 in 24-hour format
+            if (hours >= 8 && hours < 5) { // 10 AM is 10 in 24-hour format
                 formContainer.style.display = "block"; // Show form
                 messageContainer.style.display = "none"; // Hide message
             } else {
                 formContainer.style.display = "none"; // Hide form
                 messageContainer.style.display = "block"; // Show message
-                messageContainer.innerHTML = "The form is only accessible between 8 AM and 10 AM.";
+                messageContainer.innerHTML = "The form is only accessible between 8 AM and 5 AM.";
             }
         }
 
